@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+ .topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+        </style>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment Monitoring System</title>
+
+  {% load static %}
+  <!-- Custom styles -->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css'%}">
+  <link rel="stylesheet" href="{% static './css/style.min.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+  <script src="{% static '/plugins/chart.min.js'%}"></script>
+  <script src="{% static 'plugins/feather.min.js'%}"></script>
+  <script src="{% static 'js/script.js'%}"></script>
+
+</head>
+
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+        <div class="sidebar-head">
+
+                <div class="logo-text">
+                    <span class="logo-title">Environmnet Monitoring System</span>
+                    <span class="logo-subtitle">Dashboard</span>
+                </div>
+
+            <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Statistics
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                                 <ul class="cat-sub-menu">
+                  <li>
+                    <a href="/calculations  ">Table view</a>
+                  </li>
+                  <li>
+                    <a href="/calculations/graphs">Graph</a>
+                  </li>
+                </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+
+
+            <div class="sidebar-user-info">
+                <span class="sidebar-user__title">Group Members :</span>
+				<span class="sidebar-user__subtitle">Shrey Bhonsle</span>
+                <span class="sidebar-user__subtitle">Om Patel</span>
+				<span class="sidebar-user__subtitle">Shamik Puranik</span>
+				<span class="sidebar-user__subtitle">Anirudhha Shende</span>
+            </div>
+
+    </div>
+</aside>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+
+       <div class="limiter">
+              <div class="container-table100">
+            <div class="wrap-table100">
+				<div class="table100">
+        <div class="topright">
+         <button class="theme-switcher gray-circle-btn"  type="button" title="Switch theme">
+          <span class="sr-only">Switch theme</span>
+          <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+          <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+         </button>
+		 </div>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Date |   Time</th>
+								<th class="column2">Humidity</th>
+								<th class="column3">Temperature</th>
+								<th class="column4">PM 2.5</th>
+								<th class="column5">PM 10</th>
+								<th class="column6">Pressure</th>
+                                <th class="column6">CO</th>
+                                <th class="column6">NH<sub>3</sub></th>
+                                <th class="column6">O<sub>3</sub></th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">{{ d1t1 }}</td>
+									<td class="column2">{{ d1f1 }}</td>
+									<td class="column3">{{ d1f2 }}</td>
+									<td class="column4">{{ d1f3 }}</td>
+									<td class="column5">{{ d1f4 }}</td>
+									<td class="column6">{{ d1f5 }}</td>
+                                    <td class="column6">{{ d1f6 }}</td>
+                                    <td class="column6">{{ d1f7 }}</td>
+                                    <td class="column6">{{ d1f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d2t1 }}</td>
+									<td class="column2">{{ d2f1 }}</td>
+									<td class="column3">{{ d2f2 }}</td>
+									<td class="column4">{{ d2f3 }}</td>
+									<td class="column5">{{ d2f4 }}</td>
+									<td class="column6">{{ d2f5 }}</td>
+                                    <td class="column6">{{ d2f6 }}</td>
+                                    <td class="column6">{{ d2f7 }}</td>
+                                    <td class="column6">{{ d2f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d3t1 }}</td>
+									<td class="column2">{{ d3f1 }}</td>
+									<td class="column3">{{ d3f2 }}</td>
+									<td class="column4">{{ d3f3 }}</td>
+									<td class="column5">{{ d3f4 }}</td>
+									<td class="column6">{{ d3f5 }}</td>
+                                    <td class="column6">{{ d3f6 }}</td>
+                                    <td class="column6">{{ d3f7 }}</td>
+                                    <td class="column6">{{ d3f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d4t1 }}</td>
+									<td class="column2">{{ d4f1 }}</td>
+									<td class="column3">{{ d4f2 }}</td>
+									<td class="column4">{{ d4f3 }}</td>
+									<td class="column5">{{ d4f4 }}</td>
+									<td class="column6">{{ d4f5 }}</td>
+                                    <td class="column6">{{ d4f6 }}</td>
+                                    <td class="column6">{{ d4f7 }}</td>
+                                    <td class="column6">{{ d4f8 }}</td>
+
+								</tr>
+								<tr>
+									<td class="column1">{{ d5t1 }}</td>
+									<td class="column2">{{ d5f1 }}</td>
+									<td class="column3">{{ d5f2 }}</td>
+									<td class="column4">{{ d5f3 }}</td>
+									<td class="column5">{{ d5f4 }}</td>
+									<td class="column6">{{ d5f5 }}</td>
+                                    <td class="column6">{{ d5f6 }}</td>
+                                    <td class="column6">{{ d5f7 }}</td>
+                                    <td class="column6">{{ d5f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d6t1 }}</td>
+									<td class="column2">{{ d6f1 }}</td>
+									<td class="column3">{{ d6f2 }}</td>
+									<td class="column4">{{ d6f3 }}</td>
+									<td class="column5">{{ d6f4 }}</td>
+									<td class="column6">{{ d6f5 }}</td>
+                                    <td class="column6">{{ d6f6 }}</td>
+                                    <td class="column6">{{ d6f7 }}</td>
+                                    <td class="column6">{{ d6f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d7t1 }}</td>
+									<td class="column2">{{ d7f1 }}</td>
+									<td class="column3">{{ d7f2 }}</td>
+									<td class="column4">{{ d7f3 }}</td>
+									<td class="column5">{{ d7f4 }}</td>
+									<td class="column6">{{ d7f5 }}</td>
+                                    <td class="column6">{{ d7f6 }}</td>
+                                    <td class="column6">{{ d7f7 }}</td>
+                                    <td class="column6">{{ d7f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d8t1 }}</td>
+									<td class="column2">{{ d8f1 }}</td>
+									<td class="column3">{{ d8f2 }}</td>
+									<td class="column4">{{ d8f3 }}</td>
+									<td class="column5">{{ d8f4 }}</td>
+									<td class="column6">{{ d8f5 }}</td>
+                                    <td class="column6">{{ d8f6 }}</td>
+                                    <td class="column6">{{ d8f7 }}</td>
+                                    <td class="column6">{{ d8f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d9t1 }}</td>
+									<td class="column2">{{ d9f1 }}</td>
+									<td class="column3">{{ d9f2 }}</td>
+									<td class="column4">{{ d9f3 }}</td>
+									<td class="column5">{{ d9f4 }}</td>
+									<td class="column6">{{ d9f5 }}</td>
+                                    <td class="column6">{{ d9f6 }}</td>
+                                    <td class="column6">{{ d9f7 }}</td>
+                                    <td class="column6">{{ d9f8 }}</td>
+								</tr>
+								<tr>
+									<td class="column1">{{ d10t1 }}</td>
+									<td class="column2">{{ d10f1 }}</td>
+									<td class="column3">{{ d10f2 }}</td>
+									<td class="column4">{{ d10f3 }}</td>
+									<td class="column5">{{ d10f4 }}</td>
+									<td class="column6">{{ d10f5 }}</td>
+                                    <td class="column6">{{ d10f6 }}</td>
+                                    <td class="column6">{{ d10f7 }}</td>
+                                    <td class="column6">{{ d10f8 }}</td>
+								</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!-- ! Footer -->
+    <footer class="footer">
+  <div class="container footer--flex">
+    <div class="footer-start">
+      2021 © EIOT PROJECT
+    </div>
+    <ul class="footer-end">
+      <p>PANEL : G </p>
+    </ul>
+  </div>
+</footer>
+  </div>
+</div>
+ </body>
+
+</html>
